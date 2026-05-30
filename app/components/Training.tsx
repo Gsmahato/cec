@@ -1,7 +1,7 @@
-interface Topic {
-  title: string;
-  desc: string;
-}
+// components/TrainingProgram.tsx
+import React from 'react';
+import { BookOpen } from 'lucide-react';
+import { Topic } from '../type';
 
 export default function Training() {
   const literacies: Topic[] = [
@@ -20,43 +20,27 @@ export default function Training() {
   ];
 
   return (
-    <section id="training" className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-blue-900 text-center mb-12">
+    <section id="training" className="py-12 md:py-16 bg-white border-b border-gray-100">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        
+        <h2 className="text-3xl font-bold text-blue-900 text-center mb-12 flex items-center justify-center gap-2">
+          <BookOpen className="w-8 h-8" />
           प्रशिक्षण कार्यक्रम (Training)
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Column 1: Literacy Programs */}
           <div>
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 text-blue-900">
-              <span className="bg-blue-900 text-white px-3 py-1 rounded">क</span>
+              <span className="bg-blue-900 text-white px-3 py-1 rounded text-sm sm:text-base">क</span>
               साक्षरता कार्यक्रम (Literacy Program)
             </h3>
             
             <div className="space-y-4">
               {literacies.map((item, idx) => (
-                // Labeled as an individual educational Course item type
-                <div 
-                  key={idx} 
-                  className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-900"
-                  itemScope 
-                  itemType="https://schema.org/Course"
-                >
-                  {/* Title marked up for course catalog parsing */}
-                  <h4 
-                    className="font-bold text-lg text-blue-900"
-                    itemProp="name"
-                  >
-                    {item.title}
-                  </h4>
-                  {/* Description linked directly to course material */}
-                  <p 
-                    className="text-gray-600 text-sm"
-                    itemProp="description"
-                  >
-                    {item.desc}
-                  </p>
+                <div key={idx} className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-blue-900 border border-gray-100" itemScope itemType="https://schema.org/Course">
+                  <h4 className="font-bold text-lg text-blue-900" itemProp="name">{item.title}</h4>
+                  <p className="text-gray-600 text-sm mt-1" itemProp="description">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -65,38 +49,21 @@ export default function Training() {
           {/* Column 2: Philosophy */}
           <div>
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 text-blue-900">
-              <span className="bg-blue-900 text-white px-3 py-1 rounded">ख</span>
+              <span className="bg-blue-900 text-white px-3 py-1 rounded text-sm sm:text-base">ख</span>
               पूर्वीय दर्शन र विचारधारा
             </h3>
 
             <div className="space-y-4">
               {philosophies.map((item, idx) => (
-                // Labeled as an individual educational Course item type
-                <div 
-                  key={idx} 
-                  className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-green-500"
-                  itemScope 
-                  itemType="https://schema.org/Course"
-                >
-                  {/* Title marked up for course catalog parsing */}
-                  <h4 
-                    className="font-bold text-lg text-green-700"
-                    itemProp="name"
-                  >
-                    {item.title}
-                  </h4>
-                  {/* Description linked directly to course material */}
-                  <p 
-                    className="text-gray-600 text-sm"
-                    itemProp="description"
-                  >
-                    {item.desc}
-                  </p>
+                <div key={idx} className="bg-white p-5 rounded-lg shadow-sm border-l-4 border-green-500 border border-gray-100" itemScope itemType="https://schema.org/Course">
+                  <h4 className="font-bold text-lg text-green-700" itemProp="name">{item.title}</h4>
+                  <p className="text-gray-600 text-sm mt-1" itemProp="description">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

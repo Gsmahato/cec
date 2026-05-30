@@ -4,6 +4,7 @@ import Structure from "./components/Structure";
 import Training from "./components/Training";
 import Philosophy from "./components/Philosophy";
 import Footer from "./components/Footer";
+import AboutCEC from "./components/AboutCec";
 
 export default function Home() {
   // Master JSON-LD Object explaining the Organization and its Core Curriculum
@@ -55,6 +56,7 @@ export default function Home() {
 
       <Navbar />
       <Hero />
+      <AboutCEC  />
       <Structure />
       <Training />
       <Philosophy />
