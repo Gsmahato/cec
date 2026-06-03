@@ -20,7 +20,17 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation links with itemProp attributes to outline site sections */}
-        <div className="flex gap-6 font-medium text-sm md:text-base">
+        <div className="flex gap-4 md:gap-6 font-medium text-sm md:text-base items-center">
+          {/* Home Page Link */}
+          <Link 
+            href="/" 
+            className="hover:text-green-400 transition"
+            itemProp="url"
+          >
+            <span itemProp="name">गृहपृष्ठ</span>
+          </Link>
+
+          {/* Section Anchor Links */}
           <Link 
             href="#structure" 
             className="hover:text-green-400 transition"
@@ -41,6 +51,22 @@ export default function Navbar() {
             itemProp="url"
           >
             <span itemProp="name">दर्शन</span>
+          </Link>
+
+          {/* New Page Routes */}
+          <Link 
+            href="/gallery" 
+            className="hover:text-green-400 transition"
+            itemProp="url"
+          >
+            <span itemProp="name">ग्यालेरी</span>
+          </Link>
+          <Link 
+            href="/about" 
+            className="hover:text-green-400 transition"
+            itemProp="url"
+          >
+            <span itemProp="name">हाम्रो बारेमा</span>
           </Link>
         </div>
       </div>

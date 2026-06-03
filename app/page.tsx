@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Structure from "./components/Structure";
 import Training from "./components/Training";
@@ -54,7 +53,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
       />
 
-      <Navbar />
       <Hero />
       <AboutCEC  />
       <Structure />
